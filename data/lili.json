@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "title": "Lili Combos",
+  "character": "Lili",
+  "combos": [
+    {
+      "name": "Sample Combo (1)",
+      "rating": 1,
+      "damage": 43,
+      "headerId": 1,
+      "tags": ["heat", "burst", "basic"],
+      "route": [
+        { "icon": "df.png", "label": "df", "type": "input" },
+        "when Heat activation available",
+
+        { "icon": "2+3.png", "label": "2+3", "type": "input" },
+        "(or",
+        { "icon": "r1.png", "label": "r1", "type": "input" },
+        ")",
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        "during Heat",
+        { "icon": "2+3.png", "label": "2+3", "type": "input" },
+        "(or",
+        { "icon": "r1.png", "label": "r1", "type": "input" },
+        ")"
+      ]
+    },
+    {
+      "name": "Sample Combo (2)",
+      "rating": 1,
+      "damage": 49,
+      "headerId": 2,
+      "tags": ["basic"],
+      "route": [
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" }
+      ]
+    },
+    {
+      "name": "Sample Combo (3)",
+      "rating": 3,
+      "damage": 49,
+      "headerId": 2,
+      "tags": ["intermediate"],
+      "route": [
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" }
+      ]
+    }
+  ]
+}

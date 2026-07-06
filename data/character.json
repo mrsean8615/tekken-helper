@@ -1,0 +1,334 @@
+{
+  "version": "1.0",
+  "title": "Characters",
+  "characters": [
+    {
+      "name": "Alisa",
+      "fullname": "Alisa Bosconovitch",
+      "image": "alisa.png",
+      "render": "alisa_render.png",
+      "background": "into_the_stratosphere_2.png",
+      "dataFile": "alisa.json"
+    },
+    {
+      "name": "Anna",
+      "fullname": "Anna Williams",
+      "image": "anna.png",
+      "render": "anna_render.png",
+      "background": "anna_background.png",
+      "dataFile": "anna.json"
+    },
+    {
+      "name": "Armor King",
+      "fullname": "Armor King",
+      "image": "armor_king.png",
+      "render": "armor_king_render.png",
+      "background": "armor_king_background.png",
+      "dataFile": "armor_king.json"
+    },
+    {
+      "name": "Asuka",
+      "fullname": "Asuka Kazama",
+      "image": "asuka.png",
+      "render": "asuka_render.png",
+      "background": "asuka_background.png",
+      "dataFile": "asuka.json"
+    },
+    {
+      "name": "Azucena",
+      "fullname": "Azucena Milagros Ortiz Castillo",
+      "image": "azucena.png",
+      "render": "azucena_render.png",
+      "background": "azucena_background.png",
+      "dataFile": "azucena.json"
+    },
+    {
+      "name": "Bryan",
+      "fullname": "Bryan Fury",
+      "image": "bryan.png",
+      "render": "bryan_render.png",
+      "background": "bryan_background.png",
+      "dataFile": "bryan.json"
+    },
+    {
+      "name": "Clive",
+      "fullname": "Clive Rosfield",
+      "image": "clive.png",
+      "render": "clive_render.png",
+      "background": "clive_background.png",
+      "dataFile": "clive.json"
+    },
+    {
+      "name": "Claudio",
+      "fullname": "Claudio Serafino",
+      "image": "claudio.png",
+      "render": "claudio_render.png",
+      "background": "claudio_background.png",
+      "dataFile": "claudio.json"
+    },
+    {
+      "name": "Devil Jin",
+      "fullname": "Devil Jin",
+      "image": "devil_jin.png",
+      "render": "devil_jin_render.png",
+      "background": "devil_jin_background.png",
+      "dataFile": "devil_jin.json"
+    },
+    {
+      "name": "Dragunov",
+      "fullname": "Sergei Dragunov",
+      "image": "dragunov.png",
+      "render": "dragunov_render.png",
+      "background": "dragunov_background.png",
+      "dataFile": "dragunov.json"
+    },
+    {
+      "name": "Eddy",
+      "fullname": "Eddy Gordo",
+      "image": "eddy.png",
+      "render": "eddy_render.png",
+      "background": "eddy_background.png",
+      "dataFile": "eddy.json"
+    },
+    {
+      "name": "Fahkumram",
+      "fullname": "Fahkumram",
+      "image": "fahkumram.png",
+      "render": "fahkumram_render.png",
+      "background": "fahkumram_background.png",
+      "dataFile": "fahkumram.json"
+    },
+    {
+      "name": "Feng",
+      "fullname": "Feng Wei",
+      "image": "feng.png",
+      "render": "feng_render.png",
+      "background": "feng_background.png",
+      "dataFile": "feng.json"
+    },
+    {
+      "name": "Heihachi",
+      "fullname": "Heihachi Mishima",
+      "image": "heihachi.png",
+      "render": "heihachi_render.png",
+      "background": "heihachi_background.png",
+      "dataFile": "heihachi.json"
+    },
+    {
+      "name": "Hwoarang",
+      "fullname": "Hwoarang",
+      "image": "hwoarang.png",
+      "render": "hwoarang_render.png",
+      "background": "hwoarang_background.png",
+      "dataFile": "hwoarang.json"
+    },
+    {
+      "name": "Jack-8",
+      "fullname": "Jack-8",
+      "image": "jack8.png",
+      "render": "jack8_render.png",
+      "background": "jack8_background.png",
+      "dataFile": "jack8.json"
+    },
+    {
+      "name": "Jin",
+      "fullname": "Jin Kazama",
+      "image": "jin.png",
+      "render": "jin_render.png",
+      "background": "jin_background.png",
+      "dataFile": "jin.json"
+    },
+    {
+      "name": "Jun",
+      "fullname": "Jun Kazama",
+      "image": "jun.png",
+      "render": "jun_render.png",
+      "background": "jun_background.png",
+      "dataFile": "jun.json"
+    },
+    {
+      "name": "Kazuya",
+      "fullname": "Kazuya Mishima",
+      "image": "kazuya.png",
+      "render": "kazuya_render.png",
+      "background": "kazuya_background.png",
+      "dataFile": "kazuya.json"
+    },
+    {
+      "name": "King",
+      "fullname": "King",
+      "image": "king.png",
+      "render": "king_render.png",
+      "background": "king_background.png",
+      "dataFile": "king.json"
+    },
+    {
+      "name": "Kuma",
+      "fullname": "Kuma",
+      "image": "kuma.png",
+      "render": "kuma_render.png",
+      "background": "kuma_background.png",
+      "dataFile": "kuma.json"
+    },
+    {
+      "name": "Kunimitsu",
+      "fullname": "Kunimitsu",
+      "image": "kunimitsu.png",
+      "render": "kunimitsu_render.png",
+      "background": "kunimitsu_background.png",
+      "dataFile": "kunimitsu.json"
+    },
+    {
+      "name": "Lars",
+      "fullname": "Lars Alexandersson",
+      "image": "lars.png",
+      "render": "lars_render.png",
+      "background": "lars_background.png",
+      "dataFile": "lars.json"
+    },
+    {
+      "name": "Law",
+      "fullname": "Marshall Law",
+      "image": "law.png",
+      "render": "law_render.png",
+      "background": "law_background.png",
+      "dataFile": "law.json"
+    },
+    {
+      "name": "Lee",
+      "fullname": "Lee Chaolan",
+      "image": "lee.png",
+      "render": "lee_render.png",
+      "background": "lee_background.png",
+      "dataFile": "lee.json"
+    },
+    {
+      "name": "Leo",
+      "fullname": "Leo Kliesen",
+      "image": "leo.png",
+      "render": "leo_render.png",
+      "background": "leo_background.png",
+      "dataFile": "leo.json"
+    },
+    {
+      "name": "Leroy",
+      "fullname": "Leroy Smith",
+      "image": "leroy.png",
+      "render": "leroy_render.png",
+      "background": "leroy_background.png",
+      "dataFile": "leroy.json"
+    },
+    {
+      "name": "Lidia",
+      "fullname": "Lidia Sobieska",
+      "image": "lidia.png",
+      "render": "lidia_render.png",
+      "background": "lidia_background.png",
+      "dataFile": "lidia.json"
+    },
+    {
+      "name": "Miary Zo",
+      "fullname": "Miary Zo",
+      "image": "miary_zo.png",
+      "render": "miary_zo_render.png",
+      "background": "miary_zo_background.png",
+      "dataFile": "miary_zo.json"
+    },
+    {
+      "name": "Lili",
+      "fullname": "Emilie De Rochefort",
+      "image": "lili.png",
+      "render": "lili_render.png",
+      "background": "Celebration_on_the_Seine.png",
+      "dataFile": "lili.json"
+    },
+    {
+      "name": "Nina",
+      "fullname": "Nina Williams",
+      "image": "nina.png",
+      "render": "nina_render.png",
+      "background": "nina_background.png",
+      "dataFile": "nina.json"
+    },
+    {
+      "name": "Panda",
+      "fullname": "Panda",
+      "image": "panda.png",
+      "render": "panda_render.png",
+      "background": "panda_background.png",
+      "dataFile": "panda.json"
+    },
+    {
+      "name": "Paul",
+      "fullname": "Paul Phoenix",
+      "image": "paul.png",
+      "render": "paul_render.png",
+      "background": "paul_background.png",
+      "dataFile": "paul.json"
+    },
+    {
+      "name": "Raven",
+      "fullname": "Raven",
+      "image": "raven.png",
+      "render": "raven_render.png",
+      "background": "raven_background.png",
+      "dataFile": "raven.json"
+    },
+    {
+      "name": "Reina",
+      "fullname": "Reina",
+      "image": "reina.png",
+      "render": "reina_render.png",
+      "background": "reina_background.png",
+      "dataFile": "reina.json"
+    },
+    {
+      "name": "Shaheen",
+      "fullname": "Shaheen",
+      "image": "shaheen.png",
+      "render": "shaheen_render.png",
+      "background": "shaheen_background.png",
+      "dataFile": "shaheen.json"
+    },
+    {
+      "name": "Steve",
+      "fullname": "Steve Fox",
+      "image": "steve.png",
+      "render": "steve_render.png",
+      "background": "steve_background.png",
+      "dataFile": "steve.json"
+    },
+    {
+      "name": "Victor",
+      "fullname": "Victor Chevalier",
+      "image": "victor.png",
+      "render": "victor_render.png",
+      "background": "victor_background.png",
+      "dataFile": "victor.json"
+    },
+    {
+      "name": "Xiaoyu",
+      "fullname": "Ling Xiaoyu",
+      "image": "xiaoyu.png",
+      "render": "xiaoyu_render.png",
+      "background": "xiaoyu_background.png",
+      "dataFile": "xiaoyu.json"
+    },
+    {
+      "name": "Yoshimitsu",
+      "fullname": "Yoshimitsu",
+      "image": "yoshimitsu.png",
+      "render": "yoshimitsu_render.png",
+      "background": "yoshimitsu_background.png",
+      "dataFile": "yoshimitsu.json"
+    },
+    {
+      "name": "Zafina",
+      "fullname": "Zafina",
+      "image": "zafina.png",
+      "render": "zafina_render.png",
+      "background": "zafina_background.png",
+      "dataFile": "zafina.json"
+    }
+  ]
+}

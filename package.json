@@ -1,0 +1,43 @@
+{
+  "name": "tekken-helper",
+  "version": "1.0.0",
+  "description": "Tekken 8 helper desktop app",
+  "main": "main.js",
+  "private": true,
+  "author": "Merlin",
+  "scripts": {
+    "dev": "electronmon .",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "set CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder"
+  },
+  "devDependencies": {
+    "@noble/hashes": "^1.8.0",
+    "electron": "^43.0.0",
+    "electron-builder": "^26.15.3",
+    "electronmon": "^2.0.4"
+  },
+  "build": {
+    "appId": "com.seanpayne.tekkenhelper",
+    "productName": "Tekken Helper",
+    "files": [
+      "index.html",
+      "main.js",
+      "preload.js",
+      "scripts/**/*",
+      "styles/**/*",
+      "data/**/*",
+      "img/**/*",
+      "README.md",
+      "package.json",
+      "combo.html"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "img/icons/favicon.png"
+    }
+  }
+}

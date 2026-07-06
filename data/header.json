@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "title": "Combo Header",
+  "headers": [
+    {
+      "headerId": 1,
+      "name": "Header 1",
+      "value": ["Combos that use Heat Burst"],
+      "tags": ["heat", "burst", "basic"]
+    },
+    {
+      "headerId": 2,
+      "name": "Header 2",
+      "value": [
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        "or",
+        { "icon": "uf.png", "label": "uf", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        "(combo on hit)"
+      ]
+    }
+  ]
+}
