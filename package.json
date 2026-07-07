@@ -44,6 +44,9 @@
     "win": {
       "target": "nsis",
       "icon": "img/icons/favicon.png"
+    },
+    "nsis": {
+      "artifactName": "Tekken-Helper-Setup-${version}.${ext}"
     }
   },
   "dependencies": {
