@@ -1,5 +1,21 @@
 ﻿const { app, BrowserWindow } = require("electron");
 const path = require("path");
+const { autoUpdater } = require("electron-updater");
+
+autoUpdater.on("checking-for-update", () => {
+  console.log("Checking for updates...");
+});
+autoUpdater.on("update-available", () => {
+  console.log("Update available");
+});
+autoUpdater.on("update-downloaded", () => {
+  console.log("Update downloaded");
+  autoUpdater.quitAndInstall();
+});
+autoUpdater.on("error", (error) => {
+  console.error("Update error:", error);
+});
+autoUpdater.checkForUpdates();
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -13,8 +29,8 @@ function createWindow() {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
       nodeIntegration: false,
-      sandbox: false
-    }
+      sandbox: false,
+    },
   });
 
   win.removeMenu();
