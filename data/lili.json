@@ -11,6 +11,7 @@
       "tags": ["heat", "burst", "basic"],
       "route": [
         { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
         "when Heat activation available",
 
         { "icon": "2+3.png", "label": "2+3", "type": "input" },
