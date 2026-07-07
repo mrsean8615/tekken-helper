@@ -1,5 +1,7 @@
 ﻿import pkg from "../package.json" with { type: "json" };
+
 const grid = document.getElementById("characterGrid");
+const updateStatus = document.querySelector(".update-status");
 const storageKey = "tekken-helper-selected-character";
 const profileStorageKey = "tekken-helper-selected-character-profile";
 
@@ -76,6 +78,14 @@ function setSelectedState(name) {
   });
 }
 
+function setUpdateStatus(message) {
+  if (!updateStatus) {
+    return;
+  }
+
+  updateStatus.textContent = message;
+}
+
 function createCharacterCard(character, selectedName) {
   const button = document.createElement("button");
   button.type = "button";
@@ -130,6 +140,12 @@ function createCharacterCard(character, selectedName) {
 }
 
 async function init() {
+  if (window.tekkenHelper?.onUpdateStatus) {
+    window.tekkenHelper.onUpdateStatus((message) => {
+      setUpdateStatus(message);
+    });
+  }
+
   const characters = await loadCharacters();
   const selectedName = readSelectedCharacter();
   const fragment = document.createDocumentFragment();
@@ -143,5 +159,9 @@ async function init() {
 }
 
 init();
+
+if (updateStatus && !updateStatus.textContent) {
+  setUpdateStatus("Checking for updates...");
+}
 
 document.querySelector(".version_number").textContent = `v${pkg.version}`;

@@ -1,4 +1,4 @@
-﻿const { contextBridge } = require("electron");
+﻿const { contextBridge, ipcRenderer } = require("electron");
 const fs = require("fs/promises");
 const path = require("path");
 
@@ -8,6 +8,19 @@ async function readJson(relativePath) {
   return JSON.parse(contents);
 }
 
+function onUpdateStatus(callback) {
+  const listener = (_event, message) => {
+    callback(message);
+  };
+
+  ipcRenderer.on("update-status", listener);
+
+  return () => {
+    ipcRenderer.removeListener("update-status", listener);
+  };
+}
+
 contextBridge.exposeInMainWorld("tekkenHelper", {
-  readJson
+  readJson,
+  onUpdateStatus,
 });
