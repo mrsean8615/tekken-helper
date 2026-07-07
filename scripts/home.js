@@ -1,4 +1,5 @@
-﻿const grid = document.getElementById("characterGrid");
+﻿import pkg from "../package.json" with { type: "json" };
+const grid = document.getElementById("characterGrid");
 const storageKey = "tekken-helper-selected-character";
 const profileStorageKey = "tekken-helper-selected-character-profile";
 
@@ -13,22 +14,24 @@ function getBrowserFallbackData() {
         name: "Lili",
         fullname: "Emilie De Rochefort",
         image: "lili.png",
-        dataFile: "lili.json"
+        dataFile: "lili.json",
       },
       {
         name: "Alisa",
         fullname: "Alisa Bosconovitch",
         image: "alisa.png",
-        dataFile: "alisa.json"
-      }
-    ]
+        dataFile: "alisa.json",
+      },
+    ],
   };
 }
 
 async function loadCharacters() {
   if (window.tekkenHelper?.readJson) {
     try {
-      return normalizeCharacterData(await window.tekkenHelper.readJson("data/character.json"));
+      return normalizeCharacterData(
+        await window.tekkenHelper.readJson("data/character.json"),
+      );
     } catch {
       return normalizeCharacterData(getBrowserFallbackData());
     }
@@ -66,7 +69,10 @@ function writeSelectedCharacter(character) {
 function setSelectedState(name) {
   document.querySelectorAll(".card").forEach((card) => {
     card.classList.toggle("is-selected", card.dataset.characterName === name);
-    card.setAttribute("aria-pressed", card.dataset.characterName === name ? "true" : "false");
+    card.setAttribute(
+      "aria-pressed",
+      card.dataset.characterName === name ? "true" : "false",
+    );
   });
 }
 
@@ -75,8 +81,14 @@ function createCharacterCard(character, selectedName) {
   button.type = "button";
   button.className = "card";
   button.dataset.characterName = character.name;
-  button.setAttribute("aria-label", `Open combo page for ${character.fullname || character.name}`);
-  button.setAttribute("aria-pressed", character.name === selectedName ? "true" : "false");
+  button.setAttribute(
+    "aria-label",
+    `Open combo page for ${character.fullname || character.name}`,
+  );
+  button.setAttribute(
+    "aria-pressed",
+    character.name === selectedName ? "true" : "false",
+  );
 
   if (character.name === selectedName) {
     button.classList.add("is-selected");
@@ -90,12 +102,16 @@ function createCharacterCard(character, selectedName) {
   image.alt = `${character.name} portrait`;
   image.loading = "lazy";
   image.decoding = "async";
-  image.addEventListener("error", () => {
-    const fallback = document.createElement("div");
-    fallback.className = "card-fallback";
-    fallback.textContent = character.name.charAt(0).toUpperCase();
-    image.replaceWith(fallback);
-  }, { once: true });
+  image.addEventListener(
+    "error",
+    () => {
+      const fallback = document.createElement("div");
+      fallback.className = "card-fallback";
+      fallback.textContent = character.name.charAt(0).toUpperCase();
+      image.replaceWith(fallback);
+    },
+    { once: true },
+  );
 
   portrait.append(image);
 
@@ -127,3 +143,5 @@ async function init() {
 }
 
 init();
+
+document.querySelector(".version_number").textContent = `v${pkg.version}`;
