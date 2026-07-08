@@ -1,6 +1,6 @@
 {
   "name": "tekken-helper",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Tekken 8 helper desktop app",
   "main": "main.js",
   "private": true,
