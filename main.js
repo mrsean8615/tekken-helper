@@ -84,6 +84,7 @@ function createWindow() {
     sendUpdateStatus("Checking for updates...");
 
     if (app.isPackaged) {
+      autoUpdater.allowPrerelease = true;
       autoUpdater.checkForUpdates();
     } else {
       sendUpdateStatus("Update checks are disabled in development.");
