@@ -130,8 +130,8 @@ function createWindow() {
 
 function createUpdateWindow(version) {
   updateWindow = new BrowserWindow({
-    width: 450,
-    height: 250,
+    width: 600,
+    height: 450,
     frame: false,
     resizable: false,
     alwaysOnTop: true,
