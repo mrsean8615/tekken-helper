@@ -1,13 +1,17 @@
 ﻿const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const { autoUpdater } = require("electron-updater");
-try {
-  require("electron-reloader")(module);
-} catch {}
+if (!app.isPackaged) {
+  try {
+    require("electron-reloader")(module);
+  } catch {}
+}
 
 let mainWindow = null;
 let loadingWindow = null;
-let latestUpdateStatus = "Checking for updates...";
+let updateWindow = null;
+let updateDeclined = false;
+let latestUpdateStatus = "";
 
 function sendUpdateStatus(message) {
   latestUpdateStatus = message;
@@ -16,22 +20,49 @@ function sendUpdateStatus(message) {
     mainWindow.webContents.send("update-status", message);
   }
 }
+function clearUpdateStatusAfter(delay = 5000) {
+  setTimeout(() => {
+    latestUpdateStatus = "";
+
+    if (mainWindow && !mainWindow.isDestroyed()) {
+      mainWindow.webContents.send("update-status", "");
+    }
+  }, delay);
+}
 
 autoUpdater.on("checking-for-update", () => {
   sendUpdateStatus("Checking for updates...");
 });
-autoUpdater.on("update-available", () => {
-  sendUpdateStatus("Update found. Downloading...");
+autoUpdater.on("update-available", (info) => {
+  if (!updateDeclined) {
+    createUpdateWindow(info.version);
+  }
 });
 autoUpdater.on("update-not-available", () => {
   sendUpdateStatus("You're up to date.");
+  clearUpdateStatusAfter();
+});
+autoUpdater.on("download-progress", (progress) => {
+  if (updateWindow && !updateWindow.isDestroyed()) {
+    updateWindow.webContents.send(
+      "update-progress",
+      Math.round(progress.percent),
+    );
+  }
 });
 autoUpdater.on("update-downloaded", () => {
-  sendUpdateStatus("Update downloaded. Restarting...");
-  autoUpdater.quitAndInstall();
+  if (updateWindow && !updateWindow.isDestroyed()) {
+    updateWindow.webContents.send("update-ready");
+  }
 });
 autoUpdater.on("error", (error) => {
   sendUpdateStatus("Error checking for updates.");
+  clearUpdateStatusAfter();
+
+  if (updateWindow && !updateWindow.isDestroyed()) {
+    updateWindow.webContents.send("update-error", "Unable to download update.");
+  }
+
   console.error("Update error:", error);
 });
 
@@ -40,8 +71,8 @@ ipcMain.handle("get-update-status", () => latestUpdateStatus);
 function createWindow() {
   // Create loading window
   loadingWindow = new BrowserWindow({
-    width: 500,
-    height: 300,
+    width: 600,
+    height: 450,
     frame: false,
     transparent: false,
     backgroundColor: "#0b0f14",
@@ -49,7 +80,7 @@ function createWindow() {
     resizable: false,
   });
 
-  loadingWindow.loadFile(path.join(__dirname, "loading.html"));
+  loadingWindow.loadFile(path.join(__dirname, "pages/loading.html"));
 
   // Create main app window
   mainWindow = new BrowserWindow({
@@ -81,13 +112,12 @@ function createWindow() {
   });
 
   mainWindow.webContents.once("did-finish-load", () => {
-    sendUpdateStatus("Checking for updates...");
-
     if (app.isPackaged) {
       autoUpdater.allowPrerelease = true;
       autoUpdater.checkForUpdates();
     } else {
       sendUpdateStatus("Update checks are disabled in development.");
+      clearUpdateStatusAfter();
     }
   });
 
@@ -97,6 +127,48 @@ function createWindow() {
 
   return mainWindow;
 }
+
+function createUpdateWindow(version) {
+  updateWindow = new BrowserWindow({
+    width: 450,
+    height: 250,
+    frame: false,
+    resizable: false,
+    alwaysOnTop: true,
+    modal: true,
+    parent: mainWindow,
+    webPreferences: {
+      preload: path.join(__dirname, "preload.js"),
+      contextIsolation: true,
+      nodeIntegration: false,
+    },
+  });
+
+  updateWindow.center();
+
+  updateWindow.loadFile(path.join(__dirname, "pages/update.html"));
+
+  updateWindow.on("closed", () => {
+    updateWindow = null;
+  });
+
+  updateWindow.webContents.once("did-finish-load", () => {
+    updateWindow.webContents.send("update-version", version);
+  });
+}
+
+ipcMain.on("start-update-download", () => {
+  autoUpdater.downloadUpdate();
+});
+ipcMain.on("install-update", () => {
+  autoUpdater.quitAndInstall();
+});
+ipcMain.on("close-update-window", () => {
+  updateDeclined = true;
+  if (updateWindow && !updateWindow.isDestroyed()) {
+    updateWindow.close();
+  }
+});
 
 app.whenReady().then(() => {
   createWindow();

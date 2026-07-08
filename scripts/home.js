@@ -133,7 +133,7 @@ function createCharacterCard(character, selectedName) {
   button.addEventListener("click", () => {
     writeSelectedCharacter(character);
     setSelectedState(character.name);
-    window.location.href = "combo.html";
+    window.location.href = "./pages/combo.html";
   });
 
   return button;

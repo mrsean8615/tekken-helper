@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/update.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="title">Merlin's Tekken 8 Helper</h1>
+
+
+        <div class="status" id="status">
+            New Update Available
+        </div>
+
+        <div class="bar-container" id="progress-container" style="display:none;">
+            <div class="bar" id="progress"></div>
+        </div>
+
+        <div class="buttons">
+            <button id="action">
+                Download & Install
+            </button>
+
+            <button id="decline">
+                No Thanks
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        const { ipcRenderer } = require("electron");
+
+        const button = document.getElementById("action");
+        const status = document.getElementById("status");
+        const progress = document.getElementById("progress");
+        const version = document.getElementById("version");
+        const progressContainer = document.getElementById("progress-container");
+
+        const declineButton = document.getElementById("decline");
+
+        declineButton.onclick = () => {
+            ipcRenderer.send("close-update-window");
+        };
+
+
+        ipcRenderer.on("update-version", (_, ver) => {
+            version.textContent = `VERSION ${ver}`;
+        });
+
+
+        button.onclick = () => {
+            button.disabled = true;
+            status.textContent = "DOWNLOADING UPDATE...";
+            ipcRenderer.send("start-update-download");
+        };
+
+
+        ipcRenderer.on("update-progress", (_, percent) => {
+            progressContainer.style.display = "block";
+            progress.style.width = `${percent}%`;
+            status.textContent = `DOWNLOADING ${percent}%`;
+        });
+
+
+        ipcRenderer.on("update-ready", () => {
+            progress.style.width = "100%";
+            status.textContent = "UPDATE READY";
+
+            button.disabled = false;
+            button.textContent = "RESTART & INSTALL";
+
+            button.onclick = () => {
+                ipcRenderer.send("install-update");
+            };
+        });
+
+
+        ipcRenderer.on("update-error", (_, message) => {
+            status.textContent = message;
+            button.disabled = false;
+        });
+    </script>
+
+</body>
+
+</html>

@@ -51,14 +51,16 @@ function readSelectedCharacterName() {
 async function loadCharacters() {
   if (window.tekkenHelper?.readJson) {
     try {
-      return normalizeCharacterData(await window.tekkenHelper.readJson("data/character.json"));
+      return normalizeCharacterData(
+        await window.tekkenHelper.readJson("../data/character.json"),
+      );
     } catch {
       return [];
     }
   }
 
   try {
-    const response = await fetch("data/character.json");
+    const response = await fetch("../data/character.json");
     if (!response.ok) {
       throw new Error(`Failed to load character data: ${response.status}`);
     }
@@ -72,14 +74,16 @@ async function loadCharacters() {
 async function loadHeaders() {
   if (window.tekkenHelper?.readJson) {
     try {
-      return normalizeHeaderData(await window.tekkenHelper.readJson("data/header.json"));
+      return normalizeHeaderData(
+        await window.tekkenHelper.readJson("../data/header.json"),
+      );
     } catch {
       return [];
     }
   }
 
   try {
-    const response = await fetch("data/header.json");
+    const response = await fetch("../data/header.json");
     if (!response.ok) {
       throw new Error(`Failed to load header data: ${response.status}`);
     }
@@ -97,14 +101,14 @@ async function loadComboFile(dataFile) {
 
   if (window.tekkenHelper?.readJson) {
     try {
-      return await window.tekkenHelper.readJson(`data/${dataFile}`);
+      return await window.tekkenHelper.readJson(`../data/${dataFile}`);
     } catch {
       return { combos: [] };
     }
   }
 
   try {
-    const response = await fetch(`data/${dataFile}`);
+    const response = await fetch(`../data/${dataFile}`);
     if (!response.ok) {
       throw new Error(`Failed to load combo data: ${response.status}`);
     }
@@ -122,12 +126,14 @@ function createBadge(label, value) {
     badge.innerHTML = `${label} ${value}`;
     return badge;
   }
-  if (typeof value === 'number') {
+  if (typeof value === "number") {
     for (let i = 0; i < 5; i++) {
       if (i < value) {
-        badge.innerHTML += "<img class='combo-badge-star' src='img/icons/n.png' alt='Filled Star'>";
+        badge.innerHTML +=
+          "<img class='combo-badge-star' src='../img/icons/n.png' alt='Filled Star'>";
       } else {
-        badge.innerHTML += "<img class='combo-badge-star' src='img/icons/empty_star.png' alt='Empty Star'>";
+        badge.innerHTML +=
+          "<img class='combo-badge-star' src='../img/icons/empty_star.png' alt='Empty Star'>";
       }
     }
   }
@@ -147,14 +153,18 @@ function createTokenNode(token) {
   chip.className = `route-chip route-chip-${token.type || "text"}`;
 
   const icon = document.createElement("img");
-  icon.src = `img/icons/${token.icon}`;
+  icon.src = `../img/icons/${token.icon}`;
   icon.alt = token.label || token.icon || "combo input";
   icon.loading = "lazy";
   icon.decoding = "async";
-  icon.addEventListener("error", () => {
-    icon.remove();
-    chip.textContent = token.label || token.icon || "?";
-  }, { once: true });
+  icon.addEventListener(
+    "error",
+    () => {
+      icon.remove();
+      chip.textContent = token.label || token.icon || "?";
+    },
+    { once: true },
+  );
 
   chip.append(icon);
   return chip;
@@ -207,14 +217,14 @@ function renderComboCard(combo, header, index) {
   comboName.textContent = combo.name;
 
   titleWrap.append(comboName);
-  indexRail.append(hoverRail)
+  indexRail.append(hoverRail);
   topRow.append(titleWrap);
 
   const metrics = document.createElement("div");
   metrics.className = "combo-metrics";
   metrics.append(
     createBadge("Damage", combo.damage ?? "-"),
-    createBadge(null, combo.rating ?? "-")
+    createBadge(null, combo.rating ?? "-"),
   );
 
   topRow.append(metrics);
@@ -240,13 +250,17 @@ function renderHeroArt(character) {
 
   const image = document.createElement("img");
   image.className = "combo-hero-image";
-  image.src = `img/chara/${character.render || character.image || ""}`;
+  image.src = `../img/chara/${character.render || character.image || ""}`;
   image.alt = `${character.fullname || character.name} render`;
   image.loading = "eager";
   image.decoding = "async";
-  image.addEventListener("error", () => {
-    image.src = `img/chara/${character.image || ""}`;
-  }, { once: true });
+  image.addEventListener(
+    "error",
+    () => {
+      image.src = `../img/chara/${character.image || ""}`;
+    },
+    { once: true },
+  );
 
   art.append(image);
   return art;
@@ -267,7 +281,6 @@ function groupCombosByHeader(combos) {
   return grouped;
 }
 
-
 function buildSection(header, combos) {
   const section = document.createElement("section");
   section.className = "combo-section";
@@ -276,15 +289,17 @@ function buildSection(header, combos) {
   heading.className = "combo-section-heading";
 
   const title = document.createElement("h2");
-  const titleText = header.value.map(item => {
-    if (typeof item !== "string") {
-      return `
-        <img class="header-icon" src="img/icons/${item.icon}" alt="${item.label}">
+  const titleText = header.value
+    .map((item) => {
+      if (typeof item !== "string") {
+        return `
+        <img class="header-icon" src="../img/icons/${item.icon}" alt="${item.label}">
         `;
-    }
+      }
 
-    return `<span class="route-text">${item}</span>`;
-  }).join(" ");
+      return `<span class="route-text">${item}</span>`;
+    })
+    .join(" ");
 
   title.innerHTML = titleText;
   heading.append(title);
@@ -306,13 +321,18 @@ async function init() {
   const characters = await loadCharacters();
   const selectedName = readSelectedCharacterName();
   const storedProfile = readStoredProfile();
-  const character = characters.find((entry) => entry.name === selectedName) || storedProfile || characters[0];
+  const character =
+    characters.find((entry) => entry.name === selectedName) ||
+    storedProfile ||
+    characters[0];
 
   if (!character) {
     heroEyebrow.textContent = "Tekken 8 Helper";
     heroTitle.textContent = "No character selected";
     heroArt.replaceChildren();
-    sectionList.replaceChildren(renderEmptyState("No character data was found."));
+    sectionList.replaceChildren(
+      renderEmptyState("No character data was found."),
+    );
     return;
   }
 
@@ -325,12 +345,12 @@ async function init() {
   heroEyebrow.textContent = character.name;
   heroTitle.textContent = character.fullname || character.name;
   heroArt.replaceChildren(renderHeroArt(character));
-  comboMain.style.backgroundImage = `url('img/background/${character.background}')`;
+  comboMain.style.backgroundImage = `url('../img/background/${character.background}')`;
   document.title = `${character.fullname || character.name} | Tekken 8 Helper`;
 
   const [headers, comboData] = await Promise.all([
     loadHeaders(),
-    loadComboFile(character.dataFile)
+    loadComboFile(character.dataFile),
   ]);
 
   const combos = normalizeComboData(comboData);
@@ -339,7 +359,11 @@ async function init() {
   const usedHeaderIds = new Set();
 
   if (combos.length === 0) {
-    sectionList.replaceChildren(renderEmptyState(`No combos were found for ${character.fullname || character.name}.`));
+    sectionList.replaceChildren(
+      renderEmptyState(
+        `No combos were found for ${character.fullname || character.name}.`,
+      ),
+    );
     return;
   }
 
@@ -358,16 +382,17 @@ async function init() {
       continue;
     }
 
-    fragment.append(buildSection({ headerId, name: `Header ${headerId}` }, comboItems));
+    fragment.append(
+      buildSection({ headerId, name: `Header ${headerId}` }, comboItems),
+    );
   }
 
   sectionList.replaceChildren(fragment);
 }
 
 backButton.addEventListener("click", () => {
-  window.location.href = "index.html";
+  window.location.href = "../index.html";
 });
-
 
 const stickyHeader = document.querySelector(".combo-hero-row");
 const stickyPoint = stickyHeader.offsetTop;
@@ -381,16 +406,3 @@ window.addEventListener("scroll", () => {
 });
 
 init();
-
-
-
-
-
-
-
-
-
-
-
-
-

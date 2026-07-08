@@ -1,0 +1,103 @@
+:root {
+  color-scheme: dark;
+
+  --bg: #0b0f14;
+  --text: #f3f5f7;
+  --muted: #9aa4b2;
+  --accent: #f1c14b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family:
+    Inter,
+    Segoe UI,
+    system-ui,
+    sans-serif;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 138, 61, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at right center,
+      rgba(241, 193, 75, 0.1),
+      transparent 26%
+    ),
+    linear-gradient(180deg, #070a0f 0%, #0b0f14 60%, #090c10 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Heat-inspired but matching app theme */
+.spinner {
+  margin-top: 20px;
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+  border: 6px solid rgba(241, 193, 75, 0.2);
+
+  border-top-color: #f1c14b;
+
+  animation: spin 0.8s linear infinite;
+
+  box-shadow: 0 0 15px rgba(241, 193, 75, 0.5);
+}
+
+.title {
+  margin-top: 25px;
+
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  color: var(--accent);
+
+  font-weight: 700;
+  font-size: 1.8rem;
+
+  text-shadow: 0 0 12px rgba(241, 193, 75, 0.25);
+}
+
+.subtitle {
+  margin-top: 10px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
