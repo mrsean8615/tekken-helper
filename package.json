@@ -37,7 +37,7 @@
       "img/**/*",
       "README.md",
       "package.json",
-      "combo.html"
+      "page/**/*"
     ],
     "directories": {
       "output": "dist"
