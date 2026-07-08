@@ -52,7 +52,7 @@ async function loadCharacters() {
   if (window.tekkenHelper?.readJson) {
     try {
       return normalizeCharacterData(
-        await window.tekkenHelper.readJson("../data/character.json"),
+        await window.tekkenHelper.readJson("data/character.json"),
       );
     } catch {
       return [];
@@ -75,7 +75,7 @@ async function loadHeaders() {
   if (window.tekkenHelper?.readJson) {
     try {
       return normalizeHeaderData(
-        await window.tekkenHelper.readJson("../data/header.json"),
+        await window.tekkenHelper.readJson("data/header.json"),
       );
     } catch {
       return [];
@@ -101,7 +101,7 @@ async function loadComboFile(dataFile) {
 
   if (window.tekkenHelper?.readJson) {
     try {
-      return await window.tekkenHelper.readJson(`../data/${dataFile}`);
+      return await window.tekkenHelper.readJson(`data/${dataFile}`);
     } catch {
       return { combos: [] };
     }
