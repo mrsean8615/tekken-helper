@@ -1,4 +1,4 @@
-﻿const { app, BrowserWindow, ipcMain } = require("electron");
+﻿const { app, BrowserWindow, ipcMain, globalShortcut } = require("electron");
 const path = require("path");
 const { autoUpdater } = require("electron-updater");
 if (!app.isPackaged) {
@@ -141,6 +141,7 @@ function createUpdateWindow(version) {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
       nodeIntegration: false,
+      sandbox: false,
     },
   });
 
@@ -173,6 +174,14 @@ ipcMain.on("close-update-window", () => {
 app.whenReady().then(() => {
   createWindow();
 
+  if (!app.isPackaged) {
+    globalShortcut.register("Ctrl+Shift+U", () => {
+      if (!updateWindow || updateWindow.isDestroyed()) {
+        createUpdateWindow("99.9.9");
+      }
+    });
+  }
+
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createWindow();
@@ -181,6 +190,7 @@ app.whenReady().then(() => {
 });
 
 app.on("window-all-closed", () => {
+  globalShortcut.unregisterAll();
   if (process.platform !== "darwin") {
     app.quit();
   }

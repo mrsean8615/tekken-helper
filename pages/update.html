@@ -34,41 +34,44 @@
     </div>
 
     <script>
-        const { ipcRenderer } = require("electron");
+        const {
+            closeUpdateWindow,
+            startUpdateDownload,
+            installUpdate,
+            onUpdateVersion,
+            onUpdateProgress,
+            onUpdateReady,
+            onUpdateError,
+        } = window.tekkenHelper;
 
         const button = document.getElementById("action");
         const status = document.getElementById("status");
         const progress = document.getElementById("progress");
-        const version = document.getElementById("version");
         const progressContainer = document.getElementById("progress-container");
 
         const declineButton = document.getElementById("decline");
 
         declineButton.onclick = () => {
-            ipcRenderer.send("close-update-window");
+            closeUpdateWindow();
         };
 
-
-        ipcRenderer.on("update-version", (_, ver) => {
-            version.textContent = `VERSION ${ver}`;
+        onUpdateVersion((ver) => {
+            status.textContent = `New Update Available — v${ver}`;
         });
-
 
         button.onclick = () => {
             button.disabled = true;
             status.textContent = "DOWNLOADING UPDATE...";
-            ipcRenderer.send("start-update-download");
+            startUpdateDownload();
         };
 
-
-        ipcRenderer.on("update-progress", (_, percent) => {
+        onUpdateProgress((percent) => {
             progressContainer.style.display = "block";
             progress.style.width = `${percent}%`;
             status.textContent = `DOWNLOADING ${percent}%`;
         });
 
-
-        ipcRenderer.on("update-ready", () => {
+        onUpdateReady(() => {
             progress.style.width = "100%";
             status.textContent = "UPDATE READY";
 
@@ -76,12 +79,11 @@
             button.textContent = "RESTART & INSTALL";
 
             button.onclick = () => {
-                ipcRenderer.send("install-update");
+                installUpdate();
             };
         });
 
-
-        ipcRenderer.on("update-error", (_, message) => {
+        onUpdateError((message) => {
             status.textContent = message;
             button.disabled = false;
         });
