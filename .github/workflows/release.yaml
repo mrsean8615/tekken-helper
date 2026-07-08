@@ -59,6 +59,8 @@ jobs:
       - name: Build Electron App
         if: steps.version_check.outputs.version_changed == 'true'
         run: npm run build
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Create and push tag
         if: steps.version_check.outputs.version_changed == 'true'
