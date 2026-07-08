@@ -164,7 +164,7 @@ ipcMain.on("start-update-download", () => {
   autoUpdater.downloadUpdate();
 });
 ipcMain.on("install-update", () => {
-  autoUpdater.quitAndInstall();
+  autoUpdater.quitAndInstall(true, true);
 });
 ipcMain.on("close-update-window", () => {
   updateDeclined = true;
