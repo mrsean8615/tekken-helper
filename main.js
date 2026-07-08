@@ -30,6 +30,8 @@ function clearUpdateStatusAfter(delay = 5000) {
   }, delay);
 }
 
+autoUpdater.autoDownload = false;
+
 autoUpdater.on("checking-for-update", () => {
   sendUpdateStatus("Checking for updates...");
 });

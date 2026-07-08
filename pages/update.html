@@ -61,6 +61,7 @@
 
         button.onclick = () => {
             button.disabled = true;
+            declineButton.disabled = true;
             status.textContent = "DOWNLOADING UPDATE...";
             startUpdateDownload();
         };
