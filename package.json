@@ -37,7 +37,7 @@
       "img/**/*",
       "README.md",
       "package.json",
-      "page/**/*"
+      "pages/**/*"
     ],
     "directories": {
       "output": "dist"
