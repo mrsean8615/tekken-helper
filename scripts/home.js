@@ -140,6 +140,11 @@ function createCharacterCard(character, selectedName) {
 }
 
 async function init() {
+  if (window.tekkenHelper?.getUpdateStatus) {
+    const currentStatus = await window.tekkenHelper.getUpdateStatus();
+    setUpdateStatus(currentStatus);
+  }
+
   if (window.tekkenHelper?.onUpdateStatus) {
     window.tekkenHelper.onUpdateStatus((message) => {
       setUpdateStatus(message);
@@ -165,3 +170,13 @@ if (updateStatus && !updateStatus.textContent) {
 }
 
 document.querySelector(".version_number").textContent = `v${pkg.version}`;
+
+const hasElectronBridge = Boolean(window.tekkenHelper?.onUpdateStatus);
+
+if (updateStatus && !hasElectronBridge) {
+  updateStatus.style.display = "none";
+} else if (hasElectronBridge) {
+  window.tekkenHelper.onUpdateStatus((message) => {
+    setUpdateStatus(message);
+  });
+}

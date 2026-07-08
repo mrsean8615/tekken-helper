@@ -1,12 +1,12 @@
 {
   "name": "tekken-helper",
-  "version": "1.0.6",
+  "version": "0.2.0",
   "description": "Tekken 8 helper desktop app",
   "main": "main.js",
   "private": true,
   "author": "Merlin",
   "scripts": {
-    "dev": "electronmon .",
+    "dev": "electron .",
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "set CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder",
@@ -16,6 +16,7 @@
     "@noble/hashes": "^1.8.0",
     "electron": "^43.0.0",
     "electron-builder": "^26.15.3",
+    "electron-reloader": "^1.2.3",
     "electronmon": "^2.0.4"
   },
   "build": {

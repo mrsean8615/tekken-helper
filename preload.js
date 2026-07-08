@@ -20,7 +20,12 @@ function onUpdateStatus(callback) {
   };
 }
 
+async function getUpdateStatus() {
+  return ipcRenderer.invoke("get-update-status");
+}
+
 contextBridge.exposeInMainWorld("tekkenHelper", {
   readJson,
   onUpdateStatus,
+  getUpdateStatus,
 });
