@@ -60,7 +60,7 @@ jobs:
         if: steps.version_check.outputs.version_changed == 'true'
         run: npm run build
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
 
       - name: Create and push tag
         if: steps.version_check.outputs.version_changed == 'true'
