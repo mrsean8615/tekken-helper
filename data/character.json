@@ -141,9 +141,10 @@
     {
       "name": "Jun",
       "fullname": "Jun Kazama",
+      "nameplate": "jun_nameplate.png",
       "image": "jun.png",
       "render": "jun_render.png",
-      "background": "jun_background.png",
+      "background": "genmanji.png",
       "dataFile": "jun.json"
     },
     {
@@ -156,10 +157,11 @@
     },
     {
       "name": "King",
-      "fullname": "King",
+      "fullname": "King II",
+      "nameplate": "king_nameplate.png",
       "image": "king.png",
       "render": "king_render.png",
-      "background": "king_background.png",
+      "background": "arena.png",
       "dataFile": "king.json"
     },
     {
@@ -237,6 +239,7 @@
     {
       "name": "Lili",
       "fullname": "Emilie De Rochefort",
+      "nameplate": "lili_nameplate.png",
       "image": "lili.png",
       "render": "lili_render.png",
       "background": "Celebration_on_the_Seine.png",

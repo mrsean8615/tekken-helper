@@ -86,8 +86,8 @@ function createWindow() {
 
   // Create main app window
   mainWindow = new BrowserWindow({
-    width: 1440,
-    height: 960,
+    width: 1920,
+    height: 1080,
     minWidth: 1100,
     minHeight: 760,
     backgroundColor: "#0b0f14",

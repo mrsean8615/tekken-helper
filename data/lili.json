@@ -4,11 +4,13 @@
   "character": "Lili",
   "combos": [
     {
-      "name": "Sample Combo (1)",
+      "comboId": 1,
+      "name": "Sample Combo",
       "rating": 1,
       "damage": 43,
       "headerId": 1,
       "tags": ["heat", "burst", "basic"],
+      "editable": false,
       "route": [
         { "icon": "df.png", "label": "df", "type": "input" },
         { "icon": "2.png", "label": "2", "type": "input" },
@@ -28,11 +30,13 @@
       ]
     },
     {
-      "name": "Sample Combo (2)",
+      "comboId": 2,
+      "name": "Sample Combo",
       "rating": 1,
       "damage": 49,
       "headerId": 2,
       "tags": ["basic"],
+      "editable": false,
       "route": [
         { "icon": "df.png", "label": "df", "type": "input" },
         { "icon": "2.png", "label": "2", "type": "input" },
@@ -47,22 +51,315 @@
       ]
     },
     {
-      "name": "Sample Combo (3)",
+      "comboId": 4,
+      "name": "Sample Combo",
       "rating": 3,
-      "damage": 49,
+      "damage": 53,
       "headerId": 2,
-      "tags": ["intermediate"],
+      "tags": ["dew glide", "intermediate"],
+      "editable": false,
       "route": [
         { "icon": "df.png", "label": "df", "type": "input" },
         { "icon": "2.png", "label": "2", "type": "input" },
+
         { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
         { "icon": "b.png", "label": "b", "type": "input" },
         { "icon": "1.png", "label": "1", "type": "input" },
         { "icon": "4.png", "label": "4", "type": "input" },
+
         { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "during Dew Glide",
+
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 5,
+      "name": "Sample Combo",
+      "rating": 1,
+      "damage": 41,
+      "headerId": 3,
+      "tags": ["basic", "back facing"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "3+4.png", "label": "3+4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "back facing opponent",
+
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
         { "icon": "3.png", "label": "3", "type": "input" },
         { "icon": "2.png", "label": "2", "type": "input" },
         { "icon": "3.png", "label": "3", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 7,
+      "name": "Sample Combo",
+      "rating": 2,
+      "damage": 55,
+      "headerId": 3,
+      "tags": ["back facing", "basic"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "3+4.png", "label": "3+4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "back facing opponent",
+
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "3+4.png", "label": "3+4", "type": "input" },
+        { "icon": "3+4.png", "label": "3+4", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 9,
+      "name": "Sample Combo",
+      "rating": 2,
+      "damage": 49,
+      "headerId": 4,
+      "tags": ["basic"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        { "icon": "db.png", "label": "db", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "2.png", "label": "2", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "d.png", "label": "d", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 10,
+      "name": "Sample Combo",
+      "rating": 3,
+      "damage": 57,
+      "headerId": 4,
+      "tags": ["intermediate", "back facing", "dew glide"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        { "icon": "db.png", "label": "db", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "3+4.png", "label": "3+4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "back facing opponent",
+
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "during Dew Glide",
+
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 12,
+      "name": "Sample Combo",
+      "rating": 2,
+      "damage": 54,
+      "headerId": 5,
+      "tags": ["while rising", "basic"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        "While rising",
+        { "icon": "2.png", "label": "2", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 13,
+      "name": "Sample Combo",
+      "rating": 4,
+      "damage": 63,
+      "headerId": 5,
+      "tags": ["while rising", "dew glide", "advanced"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        "While rising",
+        { "icon": "2.png", "label": "2", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "u.png", "label": "u", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "during Dew Glide",
+
+        { "icon": "3.png", "label": "3", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "during Dew Glide",
+
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 14,
+      "name": "Sample Combo)",
+      "rating": 2,
+      "damage": 53,
+      "headerId": 6,
+      "tags": ["heat", "basic"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        "During Heat",
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 15,
+      "name": "Sample Combo)",
+      "rating": 5,
+      "damage": 64,
+      "headerId": 6,
+      "tags": ["heat", "dew glide", "advanced"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "uf.png", "label": "uf", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "during Heat and Dew Glide",
+
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "during Dew Glide",
+
+        { "icon": "d.png", "label": "d", "type": "input" },
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" }
       ]
     }
   ]

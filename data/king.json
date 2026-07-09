@@ -1,0 +1,306 @@
+{
+  "version": "1.0",
+  "title": "King combos",
+  "character": "king",
+  "combos": [
+    {
+      "comboId": 1,
+      "name": "Sample Combo",
+      "rating": 1,
+      "damage": 44,
+      "headerId": 1,
+      "tags": ["heat", "burst", "basic"],
+      "editable": false,
+      "route": [
+        { "icon": "uf.png", "label": "uf", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+        "when Heat activation available",
+
+        { "icon": "2+3.png", "label": "2+3", "type": "input" },
+        "(or",
+        { "icon": "r1.png", "label": "r1", "type": "input" },
+        ")",
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        "during Heat",
+        { "icon": "2+3.png", "label": "2+3", "type": "input" },
+        "(or",
+        { "icon": "r1.png", "label": "r1", "type": "input" },
+        ")"
+      ]
+    },
+    {
+      "comboId": 2,
+      "name": "Sample Combo",
+      "rating": 1,
+      "damage": 56,
+      "headerId": 7,
+      "tags": ["basic", "counter", "jaguar step"],
+      "editable": false,
+      "route": [
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        "(Counter Hit)",
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "3+4.png", "label": "3+4", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        "approach opponent during Jaguar Step",
+        { "icon": "1+3.png", "label": "1+3", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 4,
+      "name": "Sample Combo",
+      "rating": 1,
+      "damage": 61,
+      "headerId": 7,
+      "tags": ["basic", "counter"],
+      "editable": false,
+      "route": [
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        "(Counter Hit)",
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        "approach airborne opponent",
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+        { "icon": "2+4.png", "label": "2+4", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 5,
+      "name": "Sample Combo",
+      "rating": 1,
+      "damage": 43,
+      "headerId": 8,
+      "tags": ["basic"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        { "icon": "uf.png", "label": "uf", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "approach airborne opponent",
+
+        { "icon": "2+4.png", "label": "2+4", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 7,
+      "name": "Sample Combo",
+      "rating": 2,
+      "damage": 62,
+      "headerId": 8,
+      "tags": ["basic"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        { "icon": "uf.png", "label": "uf", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "1+2.png", "label": "1+2", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        "approach airborne opponent",
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+        { "icon": "2+4.png", "label": "2+4", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 6,
+      "name": "Sample Combo",
+      "rating": 3,
+      "damage": 57,
+      "headerId": 9,
+      "tags": ["intermediate"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        { "icon": "u.png", "label": "u", "type": "input" },
+        { "icon": "1+2.png", "label": "1+2", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        "approach airborne opponent",
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "2+4.png", "label": "2+4", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 10,
+      "name": "Sample Combo",
+      "rating": 3,
+      "damage": 69,
+      "headerId": 9,
+      "tags": ["intermediate"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        { "icon": "u.png", "label": "u", "type": "input" },
+        { "icon": "1+2.png", "label": "1+2", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        "approach airborne opponent",
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+        { "icon": "2+4.png", "label": "2+4", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 12,
+      "name": "Sample Combo (8)",
+      "rating": 1,
+      "damage": 64,
+      "headerId": 10,
+      "tags": ["crouching", "basic", "jaguar step"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        "While crouching",
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "uf.png", "label": "uf", "type": "input" },
+        { "icon": "3+4.png", "label": "3+4", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        "approach mid-air opponent during Jaguar Sprint",
+        { "icon": "1+3.png", "label": "1+3", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 13,
+      "name": "Sample Combo",
+      "rating": 4,
+      "damage": 70,
+      "headerId": 10,
+      "tags": ["crouching", "advanced"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        "While crouching",
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "df.png", "label": "df", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        "approach mid-air opponent",
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+        { "icon": "2+4.png", "label": "2+4", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 14,
+      "name": "Sample Combo",
+      "rating": 2,
+      "damage": 59,
+      "headerId": 6,
+      "tags": ["heat", "basic"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        "During Heat",
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" }
+      ]
+    },
+    {
+      "comboId": 15,
+      "name": "Sample Combo",
+      "rating": 4,
+      "damage": 68,
+      "headerId": 6,
+      "tags": ["heat", "jaguar step", "advanced"],
+      "favorite": false,
+      "editable": false,
+      "route": [
+        { "icon": "uf.png", "label": "uf", "type": "input" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "4.png", "label": "4", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "b.png", "label": "b", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        { "icon": "3+4.png", "label": "3+4", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        "during Jaguar Step",
+        { "icon": "3.png", "label": "3", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        "during Heat",
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "2.png", "label": "2", "type": "input" },
+        { "icon": "1.png", "label": "1", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+        { "icon": "next_action.png", "label": "Next Action", "type": "action" },
+        "approach airborne opponent",
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "f.png", "label": "f", "type": "input" },
+        { "icon": "fhold.png", "label": "fhold", "type": "input" },
+        { "icon": "2+4.png", "label": "2+4", "type": "input" }
+      ]
+    }
+  ]
+}

@@ -328,7 +328,7 @@ async function init() {
 
   if (!character) {
     heroEyebrow.textContent = "Tekken 8 Helper";
-    heroTitle.textContent = "No character selected";
+    heroTitle.innerHTML = "No character selected";
     heroArt.replaceChildren();
     sectionList.replaceChildren(
       renderEmptyState("No character data was found."),
@@ -343,7 +343,7 @@ async function init() {
   }
 
   heroEyebrow.textContent = character.name;
-  heroTitle.textContent = character.fullname || character.name;
+  heroTitle.innerHTML = `<img class="nameplate" src="../img/chara/${character.name}_nameplate.png" alt="${character.fullname || character.name}">`;
   heroArt.replaceChildren(renderHeroArt(character));
   comboMain.style.backgroundImage = `url('../img/background/${character.background}')`;
   document.title = `${character.fullname || character.name} | Tekken 8 Helper`;
@@ -388,6 +388,7 @@ async function init() {
   }
 
   sectionList.replaceChildren(fragment);
+  initializeComboScroll();
 }
 
 backButton.addEventListener("click", () => {
@@ -404,5 +405,44 @@ window.addEventListener("scroll", () => {
     stickyHeader.classList.remove("is-stuck");
   }
 });
+
+function initializeComboScroll() {
+  document.querySelectorAll(".combo-card-body").forEach((body) => {
+    const route = body.querySelector(".combo-route-wrap");
+    let scrollInterval;
+    let resetTimeout;
+
+    body.addEventListener("mouseenter", () => {
+      const speed = 1; // pixels per frame
+
+      function scroll() {
+        if (!body.matches(":hover")) return;
+
+        const maxScroll = route.scrollWidth - route.clientWidth;
+
+        if (route.scrollLeft < maxScroll) {
+          route.scrollLeft += speed;
+          scrollInterval = requestAnimationFrame(scroll);
+        } else {
+          // Pause at the end
+          resetTimeout = setTimeout(() => {
+            route.scrollTo({
+              left: 0,
+              behavior: "smooth",
+            });
+          }, 1500);
+        }
+      }
+
+      scrollInterval = requestAnimationFrame(scroll);
+    });
+
+    body.addEventListener("mouseleave", () => {
+      cancelAnimationFrame(scrollInterval);
+      clearTimeout(resetTimeout);
+      route.scrollLeft = 0;
+    });
+  });
+}
 
 init();

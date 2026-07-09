@@ -75,7 +75,7 @@ body::after {
 }
 
 .app-shell {
-  width: min(1240px, calc(100% - 1.25rem));
+  width: min(1680px, calc(100% - 1.25rem));
   margin: 0 auto;
   padding: 1.5rem 0 2rem;
   position: relative;
@@ -258,6 +258,7 @@ body::after {
   display: flex;
   align-items: center;
   gap: 0.85rem;
+  z-index: 2;
 }
 
 .combo-hero-row.is-stuck {
@@ -277,8 +278,10 @@ body::after {
   display: grid;
   grid-template-columns: minmax(220px, 600px) 1fr;
   gap: 1rem;
-  align-items: start;
+  align-items: end;
   border-radius: 1.25rem;
+  width: 100%;
+  height: 750px;
 }
 
 .combo-hero-art {
@@ -316,25 +319,23 @@ body::after {
 
 .combo-hero-copy {
   position: relative;
+  justify-self: end;
+  align-self: start;
   overflow: hidden;
-  padding: 1rem;
   border-radius: 12px;
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     rgba(7, 7, 9, 0.5) 0%,
     rgba(18, 16, 24, 0.4) 35%,
     rgba(27, 24, 40, 0.35) 70%,
     rgba(12, 10, 18, 0.5) 100%
-  );
+  ); */
 
   color: white;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
-.combo-hero-copy::before {
+/* .combo-hero-copy::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -378,8 +379,8 @@ body::after {
   }
   100% {
     transform: translateX(100%);
-  }
-}
+  } */
+/* } */
 .combo-hero-copy h1 {
   max-width: 11ch;
 }
@@ -406,7 +407,7 @@ body::after {
 }
 
 .combo-shell {
-  width: min(1280px, calc(100% - 1.25rem));
+  width: min(1680px, calc(100% - 1.25rem));
 }
 
 .combo-panel {
@@ -438,6 +439,8 @@ body::after {
 }
 
 .combo-section-heading h2 {
+  display: flex;
+  align-items: center;
   margin: 0;
   padding-left: 0.8rem;
   border-left: 3px solid var(--accent);
@@ -449,13 +452,51 @@ body::after {
 .header-value,
 .combo-route {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   gap: 0.45rem;
   align-items: center;
+  white-space: nowrap;
+  overflow-x: auto;
+  min-width: 0;
+  scrollbar-width: none; /* Firefox */
+  padding-bottom: 13px;
+  margin-bottom: -13px;
+}
+
+.combo-route::-webkit-scrollbar {
+  height: 0;
+}
+
+/* Show scrollbar when card is hovered */
+.combo-card:hover .combo-route {
+  scrollbar-width: thin;
+  scrollbar-color: #9aa4b2 transparent;
+}
+
+.combo-card:hover .combo-route::-webkit-scrollbar {
+  height: 6px;
+}
+
+.combo-card:hover .combo-route::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 0 12px;
+}
+
+.combo-card:hover .combo-route::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f6d365, #f1c14b);
+  border-radius: 999px;
+}
+
+.combo-card:hover .combo-route::-webkit-scrollbar-thumb:hover {
+  background: #9aa4b2;
 }
 
 .header-value {
   color: var(--muted);
+}
+.nameplate {
+  width: 480px;
+  height: auto;
 }
 
 .route-text {
@@ -479,6 +520,10 @@ body::after {
   object-fit: contain;
 }
 
+.route-chip .route-text {
+  flex-shrink: 0;
+}
+
 .combo-grid {
   display: grid;
   position: relative;
@@ -495,11 +540,13 @@ body::after {
   border: 1px solid rgba(255, 255, 255, 0.03);
   background: rgba(18, 26, 36, 0.65);
   max-height: 100px;
+  min-width: 0;
 }
 
 .combo-card-body {
   padding: 0.85rem 1rem 0.9rem 0.9rem;
   max-height: 100px;
+  min-width: 0;
 }
 
 .combo-card-top {
